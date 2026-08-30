@@ -271,7 +271,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
   </section>
 
   <div class="foot">
-    <div class="ftxt">Conexões Criativas — Instituto BR Arte × FUNARTE — 12 territórios</div>
+    <div class="ftxt">Conexões Criativas — Instituto BR Arte × FUNARTE — 12 territórios<br><span id="ultimaAtualizacaoPainel">Atualização automática ativa</span></div>
     <div class="fbadge">Sistema de Monitoramento de Prestação de Contas — SMPC</div>
   </div>
 </main>
@@ -318,6 +318,9 @@ function carregarApp(){
       document.getElementById('ld').classList.add('off');
       document.getElementById('app').classList.add('on');
       renderAll();
+      iniciarAtualizacaoAutomatica();
+      var ua=document.getElementById('ultimaAtualizacaoPainel');
+      if(ua){ua.textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});}
     })
     .catch(function(err){
       D = {ficha:null,atividades:[],metas:{territorios:[],total:null},territorios:[]};
@@ -682,6 +685,40 @@ function renderMetas(){
   });
   h+='</tbody></table></div>';
   document.getElementById('tbl-metas').innerHTML=h;
+}
+
+
+function atualizarPainelSilenciosamente(){
+  if(!APPS_SCRIPT_URL) return;
+
+  fetch(APPS_SCRIPT_URL + '?action=api&_=' + Date.now(), {cache:'no-store'})
+    .then(function(resp){
+      if(!resp.ok) throw new Error('HTTP '+resp.status);
+      return resp.json();
+    })
+    .then(function(data){
+      D = data || {};
+      TERR = Array.isArray(D.territorios) ? D.territorios : [];
+      renderAll();
+
+      var el=document.getElementById('ultimaAtualizacaoPainel');
+      if(el){
+        el.textContent='Atualizado automaticamente às '+
+          new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+      }
+    })
+    .catch(function(err){
+      console.error('Atualização automática do SMPC:',err);
+    });
+}
+
+function iniciarAtualizacaoAutomatica(){
+  if(window.__SMPC_CC_REFRESH__) clearInterval(window.__SMPC_CC_REFRESH__);
+
+  window.__SMPC_CC_REFRESH__ = setInterval(
+    atualizarPainelSilenciosamente,
+    5 * 60 * 1000
+  );
 }
 
 window.addEventListener('DOMContentLoaded',function(){
