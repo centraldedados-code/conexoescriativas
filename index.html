@@ -139,6 +139,47 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 .alerta-meta{font-size:10.5px;color:#6f7884;margin-top:3px;line-height:1.45}
 .alerta-regra{margin-top:10px;font-size:10.5px;color:#6a4b00;font-weight:600}
 
+
+/* ATIVIDADES — cards executivos padronizados */
+.atividade-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.atividade-card{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:17px 18px;display:flex;flex-direction:column;min-height:285px;box-shadow:0 3px 12px rgba(9,32,64,.04)}
+.atividade-card:hover{border-color:var(--ci);box-shadow:0 7px 20px rgba(0,183,215,.10)}
+.atividade-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:9px}
+.atividade-territorio{font:700 10px Montserrat;color:var(--ci);letter-spacing:.35px;line-height:1.4}
+.atividade-titulo{font:700 13px Montserrat;color:var(--az);line-height:1.45;margin-top:2px}
+.atividade-codigo{font:700 9px Montserrat;color:#6f7884;text-transform:uppercase;letter-spacing:.55px;margin-top:5px}
+.atividade-competencia{font-size:10px;color:#7a8490;margin-top:6px}
+.atividade-evid-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 10px}
+.atividade-evid{background:#f7f9fb;border:1px solid #e7ebf0;border-radius:10px;padding:9px 10px}
+.atividade-evid .lab{font:700 8.5px Montserrat;color:#7b8490;text-transform:uppercase;letter-spacing:.4px}
+.atividade-evid .val{font:700 13px Montserrat;color:var(--az);margin-top:3px;overflow-wrap:anywhere}
+.atividade-evid.fotos .val{color:var(--ci)}
+.atividade-reading{background:#f8fbfc;border-left:4px solid var(--ci);border-radius:8px;padding:10px 11px;font-size:10.5px;color:#5f6975;line-height:1.5;margin-top:auto}
+.atividade-reading strong{font-family:Montserrat;color:var(--az)}
+@media(max-width:950px){.atividade-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.atividade-grid{grid-template-columns:1fr}.atividade-card{min-height:auto}}
+
+/* METAS — cards por território */
+.metas-summary{background:var(--am);border:1.5px solid var(--am);border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.metas-summary .txt{font:700 13px Montserrat;color:var(--az)}
+.metas-summary .pct{font:700 24px Montserrat;color:var(--az)}
+.metas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.meta-card{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:17px 18px;display:flex;flex-direction:column;min-height:245px;box-shadow:0 3px 12px rgba(9,32,64,.04)}
+.meta-card:hover{border-color:var(--ci);box-shadow:0 7px 20px rgba(0,183,215,.10)}
+.meta-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px}
+.meta-territorio{font:700 12px Montserrat;color:var(--az);line-height:1.45}
+.meta-numbers{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 10px}
+.meta-number{background:#f7f9fb;border:1px solid #e7ebf0;border-radius:10px;padding:10px 11px}
+.meta-number .lab{font:700 9px Montserrat;color:#7b8490;text-transform:uppercase;letter-spacing:.45px}
+.meta-number .val{font:700 20px Montserrat;color:var(--az);margin-top:3px}
+.meta-number.real .val{color:var(--ci)}
+.meta-reading{background:#f8fbfc;border-left:4px solid var(--ci);border-radius:8px;padding:10px 11px;font-size:10.5px;color:#5f6975;line-height:1.5;margin:2px 0 12px}
+.meta-reading strong{font-family:Montserrat;color:var(--az)}
+.meta-progress-row{display:flex;justify-content:space-between;gap:10px;font-size:9.5px;color:#737d88;margin-top:auto;margin-bottom:5px}
+.meta-progress-row strong{font-family:Montserrat;color:var(--az)}
+@media(max-width:950px){.metas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.metas-grid{grid-template-columns:1fr}.meta-card{min-height:auto}}
+
 @media(max-width:950px){.course-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.course-grid{grid-template-columns:1fr}}
 
@@ -582,11 +623,53 @@ function setFiltro(st,btn){
   renderAtividades();
 }
 
+
+function cursoDidaticoCC_(curso){
+  var original=String(curso||'').trim();
+  var mapa={
+    'CC-0001_TECNICAS_DE_DESENHO':'Técnicas de Desenho',
+    'CC-0002_DANCAS_URBANAS':'Danças Urbanas',
+    'CC-0003_ARTES_CENICAS':'Artes Cênicas',
+    'CC-0004_ARTES_VISUAIS':'Artes Visuais'
+  };
+  if(mapa[original]) return mapa[original];
+  var nome=original.replace(/^CC-\d+[_\s-]*/i,'').replace(/_/g,' ').toLowerCase();
+  return nome ? nome.replace(/(^|\s)(\S)/g,function(_,a,b){return a+b.toUpperCase()}) : 'Atividade formativa';
+}
+
+function codigoCursoCC_(curso){
+  var m=String(curso||'').match(/^CC-\d+/i);
+  return m ? m[0].toUpperCase() : 'CURSO';
+}
+
+function leituraAgenteAtividadeCC_(r){
+  var st=String((r&&r.status)||'').trim();
+  var fotos=Number((r&&r.qtdFotos)||0);
+  var pres=String((r&&r.listaPresenca)||'').toLowerCase()==='sim';
+  var rel=String((r&&r.relatorioPedagogico)||'').toLowerCase()==='sim';
+  var cert=String((r&&r.certificacao)||'').toLowerCase()==='sim';
+
+  if(st==='Completo') return 'O Agente registra esta atividade como completa com as evidências disponíveis.';
+  if(fotos>0 && !pres) return 'Há registros fotográficos, mas a lista de presença ainda não foi localizada.';
+  if(st==='Insuficiente' || fotos>0 || pres || rel || cert) return 'Há evidências registradas, mas a comprovação ainda precisa ser completada.';
+  if(st && (st.indexOf('Alerta')===0 || st.indexOf('Erro')===0)) return 'O Agente identificou uma situação que requer conferência documental.';
+  return 'O Agente ainda não identifica evidências suficientes para comprovar esta atividade.';
+}
+
+function leituraAgenteMetaCC_(m,stMeta){
+  var previsto=Number((m&&m.previsto)||0);
+  var completo=Number((m&&m.completo)||0);
+  if(stMeta==='Completo') return 'O Agente registra todas as ações previstas deste território como completas.';
+  if(completo>0) return 'O Agente registra '+completo.toLocaleString('pt-BR')+' de '+previsto.toLocaleString('pt-BR')+' ação(ões) completas neste território.';
+  if(stMeta==='Em andamento') return 'O Agente identifica evidências de execução, mas ainda não há ação contabilizada como completa.';
+  return 'O Agente ainda não registra ação completa neste território.';
+}
+
 function renderAtividades(){
   var busca=(document.getElementById('busca') ? document.getElementById('busca').value : '').toLowerCase().trim();
   var rows=AT().filter(function(r){
     var okStatus=FILTRO==='TODOS' || r.status===FILTRO;
-    var blob=((r.territorio||'')+' '+(r.competencia||'')+' '+(r.curso||'')).toLowerCase();
+    var blob=((r.territorio||'')+' '+(r.competencia||'')+' '+(r.curso||'')+' '+cursoDidaticoCC_(r.curso)).toLowerCase();
     return okStatus && (!busca || blob.indexOf(busca)!==-1);
   });
 
@@ -595,25 +678,27 @@ function renderAtividades(){
     return;
   }
 
-  var h='<div class="tblwrap"><table class="tbl"><thead><tr>'+
-    '<th>Território</th><th>Competência</th><th>Curso</th><th>Status</th>'+
-    '<th>Fotos</th><th>Presença</th><th>Relatório</th><th>Certificação</th>'+
-    '</tr></thead><tbody>';
+  var h='<div class="atividade-grid">';
 
   rows.forEach(function(r){
-    h+='<tr>';
-    h+='<td><strong>'+esc(r.territorio||'-')+'</strong></td>';
-    h+='<td>'+esc(r.competencia||'-')+'</td>';
-    h+='<td>'+esc(r.curso||'-')+'</td>';
-    h+='<td><span class="badge '+bcl(r.status)+'">'+esc(r.status||'-')+'</span></td>';
-    h+='<td>'+Number(r.qtdFotos||0)+'</td>';
-    h+='<td>'+esc(simNao(r.listaPresenca))+'</td>';
-    h+='<td>'+esc(simNao(r.relatorioPedagogico))+'</td>';
-    h+='<td>'+esc(simNao(r.certificacao))+'</td>';
-    h+='</tr>';
+    h+='<div class="atividade-card">';
+    h+='<div class="atividade-card-top"><div class="atividade-territorio">'+esc(r.territorio||'-')+'</div><span class="badge '+bcl(r.status)+'">'+esc(r.status||'-')+'</span></div>';
+    h+='<div class="atividade-titulo">'+esc(cursoDidaticoCC_(r.curso))+'</div>';
+    h+='<div class="atividade-codigo">'+esc(codigoCursoCC_(r.curso))+'</div>';
+    h+='<div class="atividade-competencia">Competência: <strong>'+esc(r.competencia||'-')+'</strong></div>';
+
+    h+='<div class="atividade-evid-grid">';
+    h+='<div class="atividade-evid fotos"><div class="lab">Fotos</div><div class="val">'+Number(r.qtdFotos||0).toLocaleString('pt-BR')+'</div></div>';
+    h+='<div class="atividade-evid"><div class="lab">Presença</div><div class="val">'+esc(simNao(r.listaPresenca))+'</div></div>';
+    h+='<div class="atividade-evid"><div class="lab">Relatório</div><div class="val">'+esc(simNao(r.relatorioPedagogico))+'</div></div>';
+    h+='<div class="atividade-evid"><div class="lab">Certificação</div><div class="val">'+esc(simNao(r.certificacao))+'</div></div>';
+    h+='</div>';
+
+    h+='<div class="atividade-reading"><strong>Leitura do Agente</strong><br>'+esc(leituraAgenteAtividadeCC_(r))+'</div>';
+    h+='</div>';
   });
 
-  h+='</tbody></table></div>';
+  h+='</div>';
   document.getElementById('atividades-content').innerHTML=h;
 }
 
@@ -670,20 +755,35 @@ function renderMetas(){
 
   if(total){
     var pcTotal=Math.round((Number(total.percentual)||0)*100);
-    h+='<div class="card" style="background:var(--am);border-color:var(--am);display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">';
-    h+='<strong style="font-family:Montserrat;color:var(--az)">TOTAL DO PROJETO — '+Number(total.completo||0)+' de '+Number(total.previsto||0)+' ações completas</strong>';
-    h+='<strong style="font:700 20px Montserrat;color:var(--az)">'+pcTotal+'%</strong></div>';
+    h+='<div class="metas-summary"><div class="txt">TOTAL DO PROJETO — '+Number(total.completo||0).toLocaleString('pt-BR')+' de '+Number(total.previsto||0).toLocaleString('pt-BR')+' ações completas</div><div class="pct">'+pcTotal+'%</div></div>';
   }
 
-  h+='<div class="tblwrap"><table class="tbl"><thead><tr><th>Território</th><th>Previsto</th><th>Completo</th><th>Progresso</th><th>Status</th></tr></thead><tbody>';
+  if(!metas.length){
+    document.getElementById('tbl-metas').innerHTML=h+'<div class="card" style="color:#666;font-size:13px">Metas por território ainda não disponíveis.</div>';
+    return;
+  }
+
+  h+='<div class="metas-grid">';
   metas.forEach(function(m){
+    var previsto=Number(m.previsto||0);
+    var completo=Number(m.completo||0);
     var pc=Math.round((Number(m.percentual)||0)*100);
-    h+='<tr><td><strong>'+esc(m.territorio||'-')+'</strong></td><td>'+Number(m.previsto||0)+'</td><td>'+Number(m.completo||0)+'</td>';
-    h+='<td style="min-width:130px"><div class="sbw" style="height:7px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(pc,100)+'%"></div></div><div style="font-size:10px;color:#777;margin-top:3px">'+pc+'%</div></td>';
     var stMeta=statusTerritorio(m.territorio,m.status);
-    h+='<td><span class="badge '+(stMeta==='Completo'?'bR':stMeta==='Não iniciado'?'bP':'bE')+'">'+esc(stMeta)+'</span></td></tr>';
+    var badgeClasse=stMeta==='Completo' ? 'bR' : stMeta==='Não iniciado' ? 'bP' : 'bE';
+
+    h+='<div class="meta-card">';
+    h+='<div class="meta-card-top"><div class="meta-territorio">'+esc(m.territorio||'-')+'</div><span class="badge '+badgeClasse+'">'+esc(stMeta)+'</span></div>';
+    h+='<div class="meta-numbers">';
+    h+='<div class="meta-number"><div class="lab">Ações previstas</div><div class="val">'+previsto.toLocaleString('pt-BR')+'</div></div>';
+    h+='<div class="meta-number real"><div class="lab">Ações completas</div><div class="val">'+completo.toLocaleString('pt-BR')+'</div></div>';
+    h+='</div>';
+    h+='<div class="meta-reading"><strong>Leitura do Agente</strong><br>'+esc(leituraAgenteMetaCC_(m,stMeta))+'</div>';
+    h+='<div class="meta-progress-row"><span>Progresso físico</span><strong>'+completo.toLocaleString('pt-BR')+' de '+previsto.toLocaleString('pt-BR')+' · '+pc+'%</strong></div>';
+    h+='<div class="sbw" style="height:9px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(Math.max(pc,0),100)+'%"></div></div>';
+    h+='</div>';
   });
-  h+='</tbody></table></div>';
+  h+='</div>';
+
   document.getElementById('tbl-metas').innerHTML=h;
 }
 
