@@ -185,6 +185,84 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 
 @media(max-width:950px){.g4,.g3{grid-template-columns:repeat(2,1fr)}.hnav{display:none}}
 @media(max-width:600px){.g4,.g3,.g2{grid-template-columns:1fr}.hdri{padding:8px 14px}.hlogo{height:38px;max-width:145px}.hsub{display:none}.wrap{padding:18px 12px}}
+
+/* ===== CONEXÕES CRIATIVAS v2 — metas oficiais + navegação de evidências ===== */
+.official-hero{background:linear-gradient(135deg,#092040 0%,#0d3768 100%);border-radius:14px;padding:19px 21px;color:#fff;margin-bottom:14px}
+.official-hero-title{font:700 14px Montserrat;color:var(--am)}
+.official-hero-sub{font-size:10.8px;color:rgba(255,255,255,.72);line-height:1.55;margin-top:5px}
+.official-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.official-kpi{background:#fff;border:1.5px solid var(--bd);border-radius:12px;padding:15px 17px}
+.official-kpi .n{font:700 24px Montserrat;color:var(--ci)}
+.official-kpi .t{font:700 10px Montserrat;color:var(--az);text-transform:uppercase;letter-spacing:.4px;margin-top:3px}
+.official-kpi .s{font-size:10px;color:#718096;margin-top:5px;line-height:1.4}
+.official-note{background:#fff8e0;border:1px solid #ead88a;border-left:5px solid var(--am);border-radius:10px;padding:12px 14px;font-size:10.5px;color:#6f5c18;line-height:1.55;margin-top:12px}
+@media(max-width:950px){.official-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.official-grid{grid-template-columns:1fr}}
+
+.quicklinks{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-bottom:16px}
+.quicklink{display:flex;flex-direction:column;justify-content:center;min-height:76px;text-decoration:none;background:#fff;border:1.5px solid var(--bd);border-radius:11px;padding:11px 12px}
+.quicklink:hover{border-color:var(--ci);box-shadow:0 5px 16px rgba(0,183,215,.10)}
+.quicklink .t{font:700 10px Montserrat;color:var(--az);line-height:1.4}
+.quicklink .s{font-size:9.5px;color:#718096;margin-top:4px;line-height:1.35}
+@media(max-width:950px){.quicklinks{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.quicklinks{grid-template-columns:1fr 1fr}}
+
+.evid-hero{background:var(--az);border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px}
+.evid-hero-title{font:700 14px Montserrat;color:var(--am);letter-spacing:.4px}
+.evid-hero-sub{font-size:10.5px;color:rgba(255,255,255,.68);margin-top:4px;line-height:1.5}
+.evid-hero-badge{font:700 9px Montserrat;color:var(--az);background:var(--am);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.evid-kpis{margin-bottom:16px}
+.evid-kpi{background:#fff;border:1.5px solid var(--bd);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:10px}
+.evid-kpi .num{font:700 23px Montserrat;color:var(--ci)}
+.evid-kpi .lab{font:700 9px Montserrat;color:var(--az);text-transform:uppercase;line-height:1.4}
+.ev-select{max-width:230px}
+.drive-terr{background:#fff;border:1.5px solid var(--bd);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.drive-terr-head{background:var(--az);color:#fff;padding:14px 17px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.drive-terr-title{font:700 13px Montserrat}
+.drive-terr-meta{font-size:10px;color:var(--am);font-weight:700}
+.drive-terr-actions{display:flex;gap:6px;flex-wrap:wrap}
+.drive-root-btn{background:var(--am);color:var(--az);text-decoration:none;border-radius:7px;padding:6px 9px;font:700 8.8px Montserrat;text-transform:uppercase}
+.drive-comp{padding:14px 16px;border-top:1px solid #edf0f4}
+.drive-comp:first-child{border-top:none}
+.drive-comp-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.drive-comp-title{font:700 11px Montserrat;color:var(--az);border-left:3px solid var(--ci);padding-left:8px}
+.drive-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.drive-card{border:1px solid #e0e6ee;border-left:4px solid var(--ci);border-radius:11px;padding:13px;background:#fbfcfd;display:flex;flex-direction:column;min-height:175px}
+.drive-card.photos{border-left-color:var(--am);background:linear-gradient(180deg,#fffdf3 0%,#fff 100%)}
+.drive-card-title{font:700 11px Montserrat;color:var(--az);line-height:1.45;margin-bottom:7px}
+.drive-card-meta{font-size:10px;color:#737d88;line-height:1.5;margin-bottom:9px}
+.drive-chips{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.evchip{font:700 9px Montserrat;border-radius:999px;padding:4px 7px;background:#edf2f7;color:#53606f}
+.evchip.photo{background:#fff5bf;color:#765d00}
+.evchip.doc{background:#e0f7fb;color:#176377}
+.drive-actions{display:grid;grid-template-columns:1fr;gap:6px;margin-top:auto}
+.drive-open{display:block;text-align:center;text-decoration:none;background:var(--az);color:var(--am);border-radius:8px;padding:8px 9px;font:700 9.5px Montserrat;text-transform:uppercase;letter-spacing:.3px}
+.drive-open.secondary{background:#e8f7fb;color:#0f6072;border:1px solid #a8deea}
+.drive-nolink{font-size:9.5px;color:#8a939e;text-align:center;padding:7px;border:1px dashed #cfd6df;border-radius:8px}
+@media(max-width:950px){.drive-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.drive-grid{grid-template-columns:1fr}.evid-hero{align-items:flex-start}.evid-hero-badge{display:none}}
+
+.metas-group{margin-top:20px}
+.metas-group-title{font:700 11px Montserrat;color:var(--az);text-transform:uppercase;letter-spacing:1px;margin:0 0 10px;padding-left:9px;border-left:4px solid var(--ci)}
+.meta-id{font:700 10px Montserrat;color:var(--ci);letter-spacing:.5px}
+.meta-title{font:700 13px Montserrat;color:var(--az);line-height:1.45;min-height:38px}
+.meta-category{font:700 9px Montserrat;color:#6f7884;text-transform:uppercase;letter-spacing:.6px;margin-top:5px}
+.meta-status{display:inline-block;font:700 9px Montserrat;padding:4px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.3px;white-space:nowrap}
+.meta-status.concluida{background:var(--gvb);color:var(--gv)}
+.meta-status.andamento{background:#e0f7fb;color:#176377}
+.meta-status.nao-iniciada{background:var(--awb);color:var(--aw)}
+.meta-status.nao-quantificada{background:#edf2f7;color:#5b6572}
+.monitor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.monitor-mini{background:#fff;border:1.5px solid var(--bd);border-radius:12px;padding:15px 17px}
+.monitor-mini .n{font:700 24px Montserrat;color:var(--ci)}
+.monitor-mini .t{font:700 10px Montserrat;color:var(--az);text-transform:uppercase;letter-spacing:.4px;margin-top:3px}
+.monitor-mini .s{font-size:10px;color:#718096;margin-top:5px;line-height:1.4}
+.monitor-mini.ok{border-left:5px solid #1A6B3C}
+.monitor-mini.prazo{border-left:5px solid #00B7D7}
+.monitor-mini.neutro{border-left:5px solid #718096}
+@media(max-width:950px){.monitor-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.monitor-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 
@@ -221,6 +299,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       <button class="nbtn on" onclick="goV('dashboard',this)">Dashboard</button>
       <button class="nbtn" onclick="goV('territorios',this)">Territórios</button>
       <button class="nbtn" onclick="goV('atividades',this)">Atividades</button>
+      <button class="nbtn" onclick="goV('evidenciasdrive',this)">Evidências Drive</button>
       <button class="nbtn" onclick="goV('estrutura',this)">Estrutura</button>
       <button class="nbtn" onclick="goV('metas',this)">Metas</button>
     </nav>
@@ -232,18 +311,31 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <div class="st">Ficha do Projeto</div>
     <div class="card" id="ficha-card"></div>
 
+    <div class="st">Metas Físicas Oficiais do Plano de Trabalho</div>
+    <div class="official-hero">
+      <div class="official-hero-title">O painel passa a separar meta física pactuada de conformidade documental</div>
+      <div class="official-hero-sub">As metas abaixo vêm do Plano de Trabalho do Conexões Criativas. A existência de fotos, listas e relatórios comprova documentação da execução, mas não deve ser usada sozinha para inventar público realizado ou cumprimento físico.</div>
+    </div>
+    <div class="official-grid">
+      <div class="official-kpi"><div class="n">216</div><div class="t">Cursos e oficinas</div><div class="s">18 ações formativas em cada um dos 12 núcleos.</div></div>
+      <div class="official-kpi"><div class="n">4.320</div><div class="t">Vagas / participantes</div><div class="s">Capacidade de até 20 participantes por turma.</div></div>
+      <div class="official-kpi"><div class="n">12</div><div class="t">Núcleos</div><div class="s">Abrangência territorial pactuada no projeto.</div></div>
+      <div class="official-kpi"><div class="n">75%</div><div class="t">Frequência para certificação</div><div class="s">Critério mínimo previsto para emissão do certificado.</div></div>
+    </div>
+    <div class="official-note"><strong>Atenção:</strong> a estrutura técnica atual possui mais registros de acompanhamento do que as 216 ofertas pactuadas, porque foi montada por competência × quatro tipos fixos de curso. Esses registros continuam úteis para rastreabilidade, mas não devem ser apresentados como a meta oficial do projeto.</div>
+
     <div class="st">Alertas Documentais</div>
     <div id="alertas-documentais"></div>
 
     <div class="st">Visão Geral</div>
     <div class="g4" id="kpi-row"></div>
 
-    <div class="st">Índice Global de Execução</div>
+    <div class="st">Conformidade Documental dos Registros Monitorados</div>
     <div class="card" style="padding:22px 26px">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px;flex-wrap:wrap">
         <div>
-          <div style="font:700 14px Montserrat;color:var(--az)">Execução física acompanhada pelo SMPC</div>
-          <div style="font-size:11px;color:#7b8490;margin-top:4px">Percentual calculado a partir das ações com evidência considerada completa pelo Agente.</div>
+          <div style="font:700 14px Montserrat;color:var(--az)">Registros completos segundo o Agente</div>
+          <div style="font-size:11px;color:#7b8490;margin-top:4px">Este percentual mede a completude documental da estrutura de monitoramento. Não substitui o cumprimento físico das 216 ações pactuadas.</div>
         </div>
         <div id="sc-txt" style="font:700 42px Montserrat;color:var(--ci)">--</div>
       </div>
@@ -262,13 +354,13 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       <div class="sbw" style="height:14px"><div class="sb smid" id="bar-ev" style="width:0%"></div></div>
     </div>
 
-    <div class="st">Execução por Território</div>
+    <div class="st">Conformidade Documental por Território</div>
     <div class="g4" id="dash-terr"></div>
 
     <div class="st">Escopo do Painel Público</div>
     <div class="notice">
-      Este painel apresenta somente dados executivos e indicadores operacionais sanitizados.
-      Documentos de governança, links internos do Google Drive, observações de auditoria e acessos administrativos não são publicados aqui.
+      O painel distingue <strong>metas físicas oficiais</strong> do Plano de Trabalho e <strong>conformidade documental</strong> das evidências.
+      Para o monitoramento autorizado, a aba <strong>Evidências Drive</strong> disponibiliza acessos diretos às pastas oficiais do projeto.
     </div>
   </section>
 
@@ -298,6 +390,41 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
     <div id="atividades-content"></div>
   </section>
 
+  <section class="vw" id="vw-evidenciasdrive">
+    <div class="st">Acesso Rápido às Pastas Oficiais</div>
+    <div class="quicklinks">
+      <a class="quicklink" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1NyvjHvGKn_cENnMZp96m8buAcoj69cJI"><div class="t">Plano de Trabalho</div><div class="s">Plano oficial e documentos-base.</div></a>
+      <a class="quicklink" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1MV8fPV9748JjmEvOmqSmD34bNl9eWQgi"><div class="t">Territórios / Sedes</div><div class="s">Entrada para os 12 núcleos.</div></a>
+      <a class="quicklink" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1flBsc_MvadZzORunzldwlm8CRBrxYr1q"><div class="t">Controle e Links</div><div class="s">Planilha e controles do SMPC.</div></a>
+      <a class="quicklink" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1jFCSMNb_Ql6TpWeYLb-J9tgK9U_fgd9c"><div class="t">Relatórios Consolidados</div><div class="s">Relatoria e consolidações do projeto.</div></a>
+      <a class="quicklink" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1ZNo2nI3FlsIOBchIyvufFnf6KaRkO8Du"><div class="t">Comunicação Geral</div><div class="s">Peças e comprovação de comunicação.</div></a>
+    </div>
+
+    <div class="st">Evidências por Território e Atividade</div>
+    <div class="evid-hero">
+      <div>
+        <div class="evid-hero-title">TRILHA DE EVIDÊNCIAS</div>
+        <div class="evid-hero-sub">O monitor pode abrir a raiz de ações formativas de cada território e, quando o link está disponível na API, ir direto à pasta da atividade.</div>
+      </div>
+      <div class="evid-hero-badge">SMPC · DRIVE</div>
+    </div>
+
+    <div class="g3 evid-kpis" id="drive-kpis"></div>
+
+    <div class="filters">
+      <button class="fbtn on" data-evf="TODAS" onclick="setFiltroEvidencias('TODAS',this)">Todas com evidência</button>
+      <button class="fbtn" data-evf="FOTOS" onclick="setFiltroEvidencias('FOTOS',this)">Com fotos</button>
+      <button class="fbtn" data-evf="DOCUMENTOS" onclick="setFiltroEvidencias('DOCUMENTOS',this)">Documentais</button>
+      <select id="ev-territorio" class="search ev-select" onchange="renderEvidenciasDrive()"><option value="">Todos os territórios</option></select>
+      <select id="ev-competencia" class="search ev-select" onchange="renderEvidenciasDrive()"><option value="">Todas as competências</option></select>
+      <input id="ev-busca" class="search" placeholder="Buscar curso, competência ou território..." oninput="renderEvidenciasDrive()">
+    </div>
+    <div class="notice" style="margin-bottom:14px">
+      <strong>Regra:</strong> esta área mostra apenas registros com alguma evidência identificada. O botão do território abre a pasta oficial <strong>03_ACOES_FORMATIVAS</strong>; o botão da atividade usa o link da pasta já gravado na aba ATIVIDADES.
+    </div>
+    <div id="drive-evidencias-content"></div>
+  </section>
+
   <section class="vw" id="vw-estrutura">
     <div class="st">Estrutura de Evidências</div>
     <div class="notice" style="margin-bottom:14px">
@@ -307,7 +434,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
   </section>
 
   <section class="vw" id="vw-metas">
-    <div class="st">Acompanhamento de Metas por Território</div>
+    <div class="st">Metas Reais do Plano de Trabalho</div>
     <div id="tbl-metas"></div>
   </section>
 
@@ -322,6 +449,32 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 var D = null;
 var TERR = [];
 var FILTRO = 'TODOS';
+var FILTRO_EVIDENCIAS = 'TODAS';
+
+var PASTAS_TERRITORIOS_CC = {
+  'Rocinha-RJ': {raiz:'https://drive.google.com/drive/folders/17vcvxdDBduQTkA0czz2b-sfbE1SxB6lN', acoes:'https://drive.google.com/drive/folders/1u-qIZbAqgbMhnPblIaTRaoKQ5vNzjBnB'},
+  'Rio das Pedras-RJ': {raiz:'https://drive.google.com/drive/folders/1fnd9ZPF0Mp7mrNarUogixmNdqzWINPoL', acoes:'https://drive.google.com/drive/folders/1Hd5gryBxv8-UtOMhPeb-DHaHKirFB_DN'},
+  'Centro de Campos dos Goytacazes-RJ': {raiz:'https://drive.google.com/drive/folders/1UIWP_YMqRLC_bZYevthywINoBnSaauX0', acoes:'https://drive.google.com/drive/folders/1k43p44O2_df0IUWACHX79uqUirQHiXTN'},
+  'Cidade de Deus-RJ': {raiz:'https://drive.google.com/drive/folders/1Ai5i2IlL84vMASq-Gdmdi32Lfu9hbDfn', acoes:'https://drive.google.com/drive/folders/1fAweZX7oEvrl2Ag-aRotNBtIfppabJp8'},
+  'Carangola-Petrópolis-RJ': {raiz:'https://drive.google.com/drive/folders/1HfXSKmqbtUpKfSkZJqC33fll8x4CWkm8', acoes:'https://drive.google.com/drive/folders/11P0EETeF0A_tRt_jy0e3zxkmt6wdELOQ'},
+  'Nova Iguaçu-RJ': {raiz:'https://drive.google.com/drive/folders/1HLBpGroTSMFbqplQTWBVGE2DVXnWKg5_', acoes:'https://drive.google.com/drive/folders/1vNoog3qlN4D2-wqWlMpdpIFQcW_ZksmY'},
+  'Bangu-RJ': {raiz:'https://drive.google.com/drive/folders/1_NSXXsZhh5u5Dn1NXGNX2vHsIJVFKlrS', acoes:'https://drive.google.com/drive/folders/1-lNalvhRQ2AnTzCqre316yGc3HgiJsJx'},
+  'São Gonçalo-Jockey-RJ': {raiz:'https://drive.google.com/drive/folders/1Y_x5Ps7PlErILwaqwtP4IIMpQ1sqGcA8', acoes:'https://drive.google.com/drive/folders/1WKnG46jHtosXqI1zc5dhGNGKuc5lqU91'},
+  'Complexo da Maré-Nova Holanda-RJ': {raiz:'https://drive.google.com/drive/folders/1JuNuQwQ5xHicGf7cMZtqf4nWkg9DYK83', acoes:'https://drive.google.com/drive/folders/1ZQ5ty1tfrcD6mJ8UNBin0Q9ibdP5zuWQ'},
+  'Anil-RJ': {raiz:'https://drive.google.com/drive/folders/1Tqcl6_srHOIzrWDtpTyYtKO99g59gmrd', acoes:'https://drive.google.com/drive/folders/16qPfV1ZXow02iWQ2xo6t-oDUeUgC5Mme'},
+  'Manguinhos-RJ': {raiz:'https://drive.google.com/drive/folders/1Ovt3BeGlE3-zava_EMiqPzB2Y-ECgS8S', acoes:'https://drive.google.com/drive/folders/1Wlp1K6pRrWxKrVBP6gVilUDbnnNyGplG'},
+  'Triagem-RJ': {raiz:'https://drive.google.com/drive/folders/16sdaNt-yyNTy78LtxyhQ8J7AUrGFKcVM', acoes:'https://drive.google.com/drive/folders/1bZ9EWk95Yi2NNYC2_V6_f-WaPXRrg42q'}
+};
+
+var METAS_OFICIAIS_CC = [
+  {id:'M01',categoria:'Execução territorial',descricao:'Núcleos com execução do projeto',previsto:12,unidade:'núcleos',fonte:'Plano de Trabalho — 12 núcleos'},
+  {id:'M02',categoria:'Atividades formativas',descricao:'Cursos e oficinas realizados',previsto:216,unidade:'ações formativas',fonte:'18 cursos em cada um dos 12 núcleos'},
+  {id:'M03',categoria:'Público',descricao:'Participantes / vagas de formação',previsto:4320,unidade:'participantes',fonte:'Até 20 beneficiários por turma · 4.320 vagas'},
+  {id:'M04',categoria:'Acessibilidade',descricao:'Atividades formativas com tradução em Libras',previsto:216,unidade:'atividades',fonte:'Libras em todas as atividades formativas'},
+  {id:'P01',categoria:'Parâmetro pedagógico',descricao:'Frequência mínima para certificação',previsto:75,unidade:'%',fonte:'Certificação condicionada à frequência mínima de 75%'},
+  {id:'P02',categoria:'Parâmetro pedagógico',descricao:'Carga horária de cada curso/oficina',previsto:8,unidade:'horas',fonte:'4 encontros semanais de 2h'},
+  {id:'P03',categoria:'Parâmetro de monitoramento',descricao:'Evasão de referência informada no Plano de Trabalho',previsto:25,unidade:'%',fonte:'Percentual de evasão indicado no porte do projeto'}
+];
 
 var SENHA = "Brarte@2026";
 var APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzihWdSqekNOyeo_DsKSip_8-Uc7XVtHu_9OGYedSG-ijsg_XnYlXvXzQ18UHLTmzIa/exec";
@@ -364,7 +517,7 @@ function carregarApp(){
       if(ua){ua.textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});}
     })
     .catch(function(err){
-      D = {ficha:null,atividades:[],metas:{territorios:[],total:null},territorios:[]};
+      D = {ficha:null,atividades:[],metas:{territorios:[],total:null},metasDetalhadas:[],territorios:[]};
       TERR = [];
       document.getElementById('ld').classList.add('off');
       document.getElementById('app').classList.add('on');
@@ -494,6 +647,7 @@ function renderAll(){
   renderDash();
   renderListaT();
   renderAtividades();
+  renderEvidenciasDrive();
   renderEstrutura();
   renderMetas();
 }
@@ -512,7 +666,7 @@ function renderFicha(){
   h+='<div><div class="ficha-rot">Vigência</div><div class="ficha-val">'+esc(f.inicioExecucao||'-')+' — '+esc(f.fimExecucao||'-')+'</div></div>';
   h+='<div><div class="ficha-rot">Status da fase</div><div class="ficha-val"><span class="badge bA">'+esc(f.statusFase||'-')+'</span></div></div>';
   h+='<div><div class="ficha-rot">Status da execução</div><div class="ficha-val">'+esc(statusProjetoPublico(f.statusExecucao))+'</div></div>';
-  h+='<div><div class="ficha-rot">Execução real</div><div class="ficha-val">'+pct+'%</div></div>';
+  h+='<div><div class="ficha-rot">Conformidade documental</div><div class="ficha-val">'+pct+'%</div></div>';
   h+='</div>';
   el.innerHTML=h;
 }
@@ -525,8 +679,8 @@ function renderDash(){
 
   document.getElementById('kpi-row').innerHTML=
     '<div class="kpi"><div class="knum">'+TERR.length+'</div><div class="klab">Territórios</div></div>'+
-    '<div class="kpi"><div class="knum">'+rows.length+'</div><div class="klab">Ações Monitoradas</div></div>'+
-    '<div class="kpi"><div class="knum">'+completas+'</div><div class="klab">Ações Completas</div></div>'+
+    '<div class="kpi"><div class="knum">'+rows.length+'</div><div class="klab">Registros Monitorados</div></div>'+
+    '<div class="kpi"><div class="knum">'+completas+'</div><div class="klab">Registros Completos</div></div>'+
     '<div class="kpi"><div class="knum">'+(insuf+pend)+'</div><div class="klab">Em Acompanhamento</div></div>';
 
   var sg=scG();
@@ -548,7 +702,7 @@ function renderDash(){
     h+='<div class="tnome">'+esc(t)+'</div>';
     h+='<div class="tsc">'+sc+'%</div>';
     var iniciadas=rt.filter(temEvidencia).length;
-    h+='<div class="tmeta">'+comp+' completas • '+iniciadas+' com evidência de '+rt.length+'</div>';
+    h+='<div class="tmeta">'+comp+' registros completos • '+iniciadas+' com evidência de '+rt.length+'</div>';
     h+='<div style="margin-top:9px"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div>';
     h+='</div>';
   });
@@ -564,7 +718,7 @@ function renderListaT(){
     h+='<div class="tnome">'+esc(t)+'</div>';
     h+='<div class="tsc">'+sc+'%</div>';
     var iniciadas=rows.filter(temEvidencia).length;
-    h+='<div class="tmeta">'+comp+' completas • '+iniciadas+' com evidência de '+rows.length+'</div>';
+    h+='<div class="tmeta">'+comp+' registros completos • '+iniciadas+' com evidência de '+rows.length+'</div>';
     h+='<div style="margin-top:9px"><div class="sbw" style="height:8px"><div class="sb '+scl(sc)+'" style="width:'+sc+'%"></div></div></div>';
     h+='</div>';
   });
@@ -618,7 +772,7 @@ function renderDetalhe(idx){
 
 function setFiltro(st,btn){
   FILTRO=st;
-  document.querySelectorAll('.fbtn').forEach(function(b){b.classList.remove('on')});
+  document.querySelectorAll('[data-status]').forEach(function(b){b.classList.remove('on')});
   if(btn) btn.classList.add('on');
   renderAtividades();
 }
@@ -748,45 +902,219 @@ function renderEstrutura(){
   el.innerHTML=h || '<div class="card">Estrutura ainda não disponível.</div>';
 }
 
-function renderMetas(){
-  var metas=(D && D.metas && Array.isArray(D.metas.territorios)) ? D.metas.territorios : [];
-  var total=(D && D.metas) ? D.metas.total : null;
-  var h='';
-
-  if(total){
-    var pcTotal=Math.round((Number(total.percentual)||0)*100);
-    h+='<div class="metas-summary"><div class="txt">TOTAL DO PROJETO — '+Number(total.completo||0).toLocaleString('pt-BR')+' de '+Number(total.previsto||0).toLocaleString('pt-BR')+' ações completas</div><div class="pct">'+pcTotal+'%</div></div>';
-  }
-
-  if(!metas.length){
-    document.getElementById('tbl-metas').innerHTML=h+'<div class="card" style="color:#666;font-size:13px">Metas por território ainda não disponíveis.</div>';
-    return;
-  }
-
-  h+='<div class="metas-grid">';
-  metas.forEach(function(m){
-    var previsto=Number(m.previsto||0);
-    var completo=Number(m.completo||0);
-    var pc=Math.round((Number(m.percentual)||0)*100);
-    var stMeta=statusTerritorio(m.territorio,m.status);
-    var badgeClasse=stMeta==='Completo' ? 'bR' : stMeta==='Não iniciado' ? 'bP' : 'bE';
-
-    h+='<div class="meta-card">';
-    h+='<div class="meta-card-top"><div class="meta-territorio">'+esc(m.territorio||'-')+'</div><span class="badge '+badgeClasse+'">'+esc(stMeta)+'</span></div>';
-    h+='<div class="meta-numbers">';
-    h+='<div class="meta-number"><div class="lab">Ações previstas</div><div class="val">'+previsto.toLocaleString('pt-BR')+'</div></div>';
-    h+='<div class="meta-number real"><div class="lab">Ações completas</div><div class="val">'+completo.toLocaleString('pt-BR')+'</div></div>';
-    h+='</div>';
-    h+='<div class="meta-reading"><strong>Leitura do Agente</strong><br>'+esc(leituraAgenteMetaCC_(m,stMeta))+'</div>';
-    h+='<div class="meta-progress-row"><span>Progresso físico</span><strong>'+completo.toLocaleString('pt-BR')+' de '+previsto.toLocaleString('pt-BR')+' · '+pc+'%</strong></div>';
-    h+='<div class="sbw" style="height:9px"><div class="sb '+scl(pc)+'" style="width:'+Math.min(Math.max(pc,0),100)+'%"></div></div>';
-    h+='</div>';
-  });
-  h+='</div>';
-
-  document.getElementById('tbl-metas').innerHTML=h;
+function normCC(v){
+  return String(v==null?'':v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
 }
 
+function linkAtividadeDrive(r){
+  return String((r&&(r.linkPasta||r.linkDaPasta||r.linkDrive||r.urlPasta))||'').trim();
+}
+
+function evidenciaDocumentalCC(r){
+  if(!r) return false;
+  var rel=normCC(r.relatorioPedagogico), lp=normCC(r.listaPresenca), cert=normCC(r.certificacao), st=normCC(r.status);
+  return lp==='sim' || cert==='sim' || rel==='sim' || st==='completo' || st==='insuficiente' || (st && st!=='pendente');
+}
+
+function setFiltroEvidencias(v,btn){
+  FILTRO_EVIDENCIAS=v;
+  document.querySelectorAll('[data-evf]').forEach(function(b){b.classList.remove('on')});
+  if(btn) btn.classList.add('on');
+  renderEvidenciasDrive();
+}
+
+function prepararFiltrosEvidenciasCC(rows){
+  var st=document.getElementById('ev-territorio'), sc=document.getElementById('ev-competencia');
+  if(!st||!sc) return;
+  var terrAtual=st.value, compAtual=sc.value;
+  var terrs=[], comps=[];
+  rows.forEach(function(r){
+    if(r.territorio && terrs.indexOf(r.territorio)===-1) terrs.push(r.territorio);
+    if(r.competencia && comps.indexOf(r.competencia)===-1) comps.push(r.competencia);
+  });
+  terrs.sort(); comps.sort();
+  st.innerHTML='<option value="">Todos os territórios</option>'+terrs.map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join('');
+  sc.innerHTML='<option value="">Todas as competências</option>'+comps.map(function(v){return '<option value="'+esc(v)+'">'+esc(v)+'</option>'}).join('');
+  if(terrs.indexOf(terrAtual)!==-1) st.value=terrAtual;
+  if(comps.indexOf(compAtual)!==-1) sc.value=compAtual;
+}
+
+function renderEvidenciasDrive(){
+  var el=document.getElementById('drive-evidencias-content');
+  if(!el) return;
+
+  var base=AT().filter(temEvidencia);
+  prepararFiltrosEvidenciasCC(base);
+
+  var terrSel=document.getElementById('ev-territorio') ? document.getElementById('ev-territorio').value : '';
+  var compSel=document.getElementById('ev-competencia') ? document.getElementById('ev-competencia').value : '';
+  var busca=document.getElementById('ev-busca') ? document.getElementById('ev-busca').value.toLowerCase().trim() : '';
+
+  var rows=base.filter(function(r){
+    if(terrSel && r.territorio!==terrSel) return false;
+    if(compSel && r.competencia!==compSel) return false;
+    if(FILTRO_EVIDENCIAS==='FOTOS' && Number(r.qtdFotos||0)<=0) return false;
+    if(FILTRO_EVIDENCIAS==='DOCUMENTOS' && !evidenciaDocumentalCC(r)) return false;
+    if(busca){
+      var blob=((r.territorio||'')+' '+(r.competencia||'')+' '+(r.curso||'')+' '+cursoDidaticoCC_(r.curso)).toLowerCase();
+      if(blob.indexOf(busca)===-1) return false;
+    }
+    return true;
+  });
+
+  var totalFotos=rows.reduce(function(a,r){return a+Number(r.qtdFotos||0)},0);
+  var terrComEv={}; rows.forEach(function(r){if(r.territorio)terrComEv[r.territorio]=1});
+  var k=document.getElementById('drive-kpis');
+  if(k){
+    k.innerHTML='<div class="evid-kpi"><div class="num">'+rows.length+'</div><div class="lab">registro(s)<br>com evidência</div></div>'+
+      '<div class="evid-kpi"><div class="num">'+Object.keys(terrComEv).length+'</div><div class="lab">território(s)<br>com evidência</div></div>'+
+      '<div class="evid-kpi"><div class="num">'+totalFotos+'</div><div class="lab">registro(s)<br>fotográfico(s)</div></div>';
+  }
+
+  var porTerr={};
+  rows.forEach(function(r){
+    if(!porTerr[r.territorio]) porTerr[r.territorio]={};
+    if(!porTerr[r.territorio][r.competencia]) porTerr[r.territorio][r.competencia]=[];
+    porTerr[r.territorio][r.competencia].push(r);
+  });
+
+  var territoriosExibir=Object.keys(PASTAS_TERRITORIOS_CC).filter(function(t){
+    return !terrSel || t===terrSel;
+  }).sort();
+
+  var h='';
+  territoriosExibir.forEach(function(terr){
+    var grupos=porTerr[terr]||{};
+    var terrRows=rows.filter(function(r){return r.territorio===terr});
+    var tf=terrRows.reduce(function(a,r){return a+Number(r.qtdFotos||0)},0);
+    var links=PASTAS_TERRITORIOS_CC[terr]||{};
+
+    h+='<div class="drive-terr"><div class="drive-terr-head">';
+    h+='<div><div class="drive-terr-title">📁 '+esc(terr)+'</div><div class="drive-terr-meta">'+terrRows.length+' registro(s) com evidência · '+tf+' foto(s)</div></div>';
+    h+='<div class="drive-terr-actions">';
+    if(links.acoes) h+='<a class="drive-root-btn" href="'+esc(links.acoes)+'" target="_blank" rel="noopener">Abrir ações formativas</a>';
+    if(links.raiz) h+='<a class="drive-root-btn" href="'+esc(links.raiz)+'" target="_blank" rel="noopener">Abrir território</a>';
+    h+='</div></div>';
+
+    var comps=Object.keys(grupos).sort();
+    if(!comps.length){
+      h+='<div class="drive-comp"><div class="drive-nolink">Nenhuma evidência localizada para os filtros atuais. A pasta oficial do território continua disponível acima.</div></div>';
+    }
+
+    comps.forEach(function(comp){
+      var compRows=grupos[comp];
+      h+='<div class="drive-comp"><div class="drive-comp-head"><div class="drive-comp-title">'+esc(comp||'Sem competência')+' · '+compRows.length+' registro(s)</div></div><div class="drive-grid">';
+      compRows.forEach(function(r){
+        var qa=Number(r.qtdFotos||0), la=linkAtividadeDrive(r), fallback=links.acoes||links.raiz||'';
+        var destino=la||fallback;
+        h+='<div class="drive-card '+(qa>0?'photos':'')+'">';
+        h+='<div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start"><div class="drive-card-title">'+esc(cursoDidaticoCC_(r.curso))+'</div><span class="badge '+bcl(r.status)+'">'+esc(r.status||'-')+'</span></div>';
+        h+='<div class="drive-card-meta">Competência: <strong>'+esc(r.competencia||'-')+'</strong><br>Última verificação: '+esc(r.ultimaVerificacao||'não informada')+'</div>';
+        h+='<div class="drive-chips">';
+        if(qa>0) h+='<span class="evchip photo">📷 '+qa+' foto(s)</span>';
+        if(evidenciaDocumentalCC(r)) h+='<span class="evchip doc">Documento(s)</span>';
+        if(normCC(r.listaPresenca)==='sim') h+='<span class="evchip doc">Lista de presença</span>';
+        h+='</div><div class="drive-actions">';
+        if(destino) h+='<a class="drive-open" href="'+esc(destino)+'" target="_blank" rel="noopener">'+(la?'Abrir pasta da atividade':'Abrir ações formativas')+'</a>';
+        else h+='<div class="drive-nolink">Link ainda não disponível.</div>';
+        h+='</div></div>';
+      });
+      h+='</div></div>';
+    });
+    h+='</div>';
+  });
+
+  el.innerHTML=h || '<div class="card">Nenhuma pasta territorial configurada.</div>';
+}
+
+function valorMetaDetalhadaCC(id){
+  var rows=(D && Array.isArray(D.metasDetalhadas)) ? D.metasDetalhadas : [];
+  var alvo=String(id||'').toUpperCase();
+  for(var i=0;i<rows.length;i++){
+    var rid=String(rows[i]['ID Meta']||rows[i].id||rows[i].meta||'').toUpperCase();
+    if(rid===alvo){
+      var v=rows[i]['Quantidade Realizada'];
+      if(v===undefined) v=rows[i].realizado;
+      var n=Number(String(v==null?'':v).replace(/\./g,'').replace(',','.'));
+      return Number.isFinite(n)?n:null;
+    }
+  }
+  return null;
+}
+
+function realizadoMetaCC(meta){
+  // Regra igual ao Prospera Turismo:
+  // o REALIZADO oficial só vem de um quantitativo lançado em fonte própria.
+  // Evidência documental NÃO é convertida automaticamente em execução física.
+  return valorMetaDetalhadaCC(meta.id);
+}
+
+function leituraDocumentalMetaCC(meta){
+  if(meta.id==='M01'){
+    var terr={}; AT().filter(temEvidencia).forEach(function(r){if(r.territorio) terr[r.territorio]=1});
+    return Object.keys(terr).length+' de 12 território(s) possuem algum registro de evidência no SMPC.';
+  }
+  if(meta.id==='M02'){
+    return AT().filter(temEvidencia).length+' registro(s) da estrutura de monitoramento possuem alguma evidência. Esse número não substitui o quantitativo oficial de cursos realizados.';
+  }
+  if(meta.id==='M03'){
+    return 'O público realizado deve vir de consolidação de listas/inscrições, sem contagem automática por número de arquivos.';
+  }
+  if(meta.id==='M04'){
+    return 'A comprovação de Libras deve ser lançada como quantitativo próprio e apoiada pelas evidências das atividades.';
+  }
+  return '';
+}
+
+function statusMetaCC(meta,realizado){
+  if(meta.id.indexOf('P')===0) return {texto:'Parâmetro',classe:'nao-quantificada'};
+  if(realizado===null) return {texto:'Aguardando quantitativo',classe:'nao-quantificada'};
+  if(realizado>=meta.previsto) return {texto:'Meta atingida',classe:'concluida'};
+  if(realizado>0) return {texto:'Em andamento',classe:'andamento'};
+  return {texto:'Não iniciada',classe:'nao-iniciada'};
+}
+
+function renderMetas(){
+  var el=document.getElementById('tbl-metas');
+  var metas=METAS_OFICIAIS_CC.slice();
+  var oficiais=metas.filter(function(m){return m.id.indexOf('M')===0});
+  var comQuant=oficiais.filter(function(m){return realizadoMetaCC(m)!==null});
+  var atingidas=oficiais.filter(function(m){var r=realizadoMetaCC(m);return r!==null && r>=m.previsto}).length;
+
+  var h='<div class="monitor-grid" style="margin-bottom:18px">'+
+    '<div class="monitor-mini"><div class="n">4</div><div class="t">Metas físicas principais</div><div class="s">Núcleos, ações formativas, público e acessibilidade.</div></div>'+
+    '<div class="monitor-mini ok"><div class="n">'+atingidas+'</div><div class="t">Atingidas</div><div class="s">Somente quando há quantitativo confiável suficiente.</div></div>'+
+    '<div class="monitor-mini prazo"><div class="n">'+comQuant.length+'</div><div class="t">Com realizado calculável</div><div class="s">Somente metas com Quantidade Realizada informada em fonte própria.</div></div>'+
+    '<div class="monitor-mini neutro"><div class="n">3</div><div class="t">Parâmetros</div><div class="s">75% de frequência, 8h por formação e evasão de referência de 25%.</div></div>'+
+  '</div>'+
+  '<div class="notice" style="margin-bottom:18px"><strong>Regra do painel:</strong> o Plano de Trabalho fixa 216 cursos/oficinas, 18 por núcleo, 12 núcleos e até 4.320 participantes. Fotos, listas, relatórios e certificados são evidências de execução; quando o quantitativo de público ou de Libras não está disponível na API, o sistema mostra <strong>“Aguardando quantitativo”</strong> em vez de assumir zero.</div>';
+
+  var grupos={};
+  metas.forEach(function(m){if(!grupos[m.categoria])grupos[m.categoria]=[];grupos[m.categoria].push(m);});
+
+  Object.keys(grupos).forEach(function(cat){
+    h+='<div class="metas-group"><div class="metas-group-title">'+esc(cat)+'</div><div class="metas-grid">';
+    grupos[cat].forEach(function(m){
+      var realizado=realizadoMetaCC(m);
+      var st=statusMetaCC(m,realizado);
+      var pct=(realizado===null || !m.previsto || m.id.indexOf('P')===0) ? null : Math.min(100,Math.max(0,(realizado/m.previsto)*100));
+      h+='<div class="meta-card">';
+      h+='<div class="meta-card-top"><div class="meta-id">'+esc(m.id)+'</div><span class="meta-status '+st.classe+'">'+esc(st.texto)+'</span></div>';
+      h+='<div class="meta-title">'+esc(m.descricao)+'</div><div class="meta-category">'+esc(m.unidade)+'</div>';
+      h+='<div class="meta-numbers"><div class="meta-number"><div class="lab">Previsto</div><div class="val">'+Number(m.previsto).toLocaleString('pt-BR')+(m.unidade==='%'?'%':'')+'</div></div>'+
+        '<div class="meta-number real"><div class="lab">'+(m.id.indexOf('P')===0?'Referência':'Realizado')+'</div><div class="val">'+(m.id.indexOf('P')===0?Number(m.previsto).toLocaleString('pt-BR')+(m.unidade==='%'?'%':''):(realizado===null?'—':Number(realizado).toLocaleString('pt-BR')))+'</div></div></div>';
+      var docLeitura=leituraDocumentalMetaCC(m);
+      h+='<div class="meta-reading"><strong>Fonte / leitura</strong><br>'+esc(m.fonte)+(realizado===null && m.id.indexOf('P')!==0?' O quantitativo realizado ainda precisa ser alimentado por fonte confiável.':'')+(docLeitura?'<br><br><strong>Rastreabilidade documental:</strong> '+esc(docLeitura):'')+'</div>';
+      if(pct!==null){
+        h+='<div class="meta-progress-row"><span>Cumprimento quantitativo</span><strong>'+Math.round(pct)+'%</strong></div><div class="sbw" style="height:9px"><div class="sb '+scl(pct)+'" style="width:'+pct+'%"></div></div>';
+      }
+      h+='</div>';
+    });
+    h+='</div></div>';
+  });
+
+  el.innerHTML=h;
+}
 
 function atualizarPainelSilenciosamente(){
   if(!APPS_SCRIPT_URL) return;
