@@ -272,6 +272,27 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
 @media(max-width:950px){.monitor-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.monitor-grid{grid-template-columns:1fr}}
 
+
+/* Monitoramento documental: consulta dos links identificados no Drive */
+.cc-documentos{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:20px;margin:16px 0 20px}
+.cc-documentos h3{font:700 14px Montserrat;color:var(--az);margin-bottom:8px}
+.cc-documentos .cc-nota{font-size:11px;color:#5d6875;line-height:1.6;margin-bottom:12px}
+.cc-docfilters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.cc-docfilters select,.cc-docfilters input{background:#fff;border:1.5px solid var(--bd);border-radius:8px;padding:9px;min-width:140px;flex:1;font:11px 'Open Sans',sans-serif}
+.cc-docfilters button{background:#fff;color:var(--az);border:1.5px solid var(--bd);border-radius:8px;padding:9px 12px;cursor:pointer;font:700 10px Montserrat}
+.cc-docfilters button.active{background:var(--az);color:var(--am);border-color:var(--az)}
+.cc-docgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.cc-doccard{display:flex;flex-direction:column;gap:8px;border:1px solid var(--bd);border-left:4px solid var(--ci);border-radius:10px;padding:13px;background:#fbfcfe;min-height:165px}
+.cc-doccard.cc-fotos{border-left-color:var(--am)}
+.cc-doccard.cc-pendente{border-left-color:#b26a00}
+.cc-doccard strong{font:700 11px Montserrat;color:var(--az);line-height:1.5}
+.cc-doccard p{font-size:10px;color:#657180;line-height:1.5}
+.cc-doccard a{display:block;margin-top:auto;background:var(--az);color:var(--am);text-align:center;text-decoration:none;border-radius:8px;padding:9px;font:700 10px Montserrat}
+.cc-doccard a:hover{background:#11527f}
+.cc-docfooter{font-size:10px;color:#697584;margin:14px 0 0;line-height:1.5}
+@media(max-width:950px){.cc-docgrid{grid-template-columns:repeat(2,1fr)}.hdri{flex-wrap:wrap}.hnav{display:flex;flex-wrap:wrap;justify-content:flex-start;width:100%}}
+@media(max-width:600px){.cc-docgrid{grid-template-columns:1fr}}
+
 </style>
 </head>
 
@@ -308,7 +329,7 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       <button class="nbtn on" onclick="goV('dashboard',this)">Dashboard</button>
       <button class="nbtn" onclick="goV('territorios',this)">Territórios</button>
       <button class="nbtn" onclick="goV('atividades',this)">Atividades</button>
-      <button class="nbtn" onclick="goV('evidenciasdrive',this)">Evidências Drive</button>
+      <button class="nbtn" onclick="goV('evidenciasdrive',this)">Listas e Fotos</button>
       <button class="nbtn" onclick="goV('estrutura',this)">Estrutura</button>
       <button class="nbtn" onclick="goV('metas',this)">Metas</button>
     </nav>
@@ -417,6 +438,27 @@ h1,h2,h3,h4{font-family:'Montserrat',Arial,sans-serif}
       <a class="quicklink" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1jFCSMNb_Ql6TpWeYLb-J9tgK9U_fgd9c"><div class="t">Relatórios Consolidados</div><div class="s">Relatoria e consolidações do projeto.</div></a>
       <a class="quicklink" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1ZNo2nI3FlsIOBchIyvufFnf6KaRkO8Du"><div class="t">Comunicação Geral</div><div class="s">Peças e comprovação de comunicação.</div></a>
     </div>
+
+    
+    <div class="st">LISTAS DE PRESENÇA E FOTOS — DOCUMENTOS LOCALIZADOS</div>
+    <section class="cc-documentos" id="cc-documentos">
+      <h3>Consulta direta para o monitoramento</h3>
+      <p class="cc-nota">Listas e pastas fotográficas localizadas no Google Drive até 15/10/2026. Clique em um documento para abri-lo no Drive, conforme suas permissões. Não são exibidos nomes, assinaturas nem CPF nesta página. Registros pendentes permanecem sinalizados para regularização.</p>
+      <div class="cc-docfilters">
+        <button type="button" class="active" data-doc-tipo="lista" onclick="filtroTipoDocumentosCC('lista')">Listas localizadas (16)</button>
+        <button type="button" data-doc-tipo="fotos" onclick="filtroTipoDocumentosCC('fotos')">Fotos (12 pastas)</button>
+        <button type="button" data-doc-tipo="pendente" onclick="filtroTipoDocumentosCC('pendente')">Listas pendentes (6)</button>
+        <button type="button" data-doc-tipo="todos" onclick="filtroTipoDocumentosCC('todos')">Ver tudo</button>
+      </div>
+      <div class="cc-docfilters">
+        <select id="cc-doc-territorio" aria-label="Território" onchange="renderDocumentosCC()"><option value="">Todos os territórios</option></select>
+        <select id="cc-doc-comp" aria-label="Competência" onchange="renderDocumentosCC()"><option value="">Todas as competências</option></select>
+        <input id="cc-doc-busca" placeholder="Buscar curso, território ou data..." aria-label="Buscar documentos" oninput="renderDocumentosCC()">
+      </div>
+      <p id="cc-doc-contagem" class="cc-nota" aria-live="polite"></p>
+      <div class="cc-docgrid" id="cc-docgrid"></div>
+      <p class="cc-docfooter">Conferência de localização de arquivos, não de validade documental. O alerta de pendências depende dos registros da aba ATIVIDADES da planilha oficial. Os quantitativos das pastas fotográficas foram registrados no controle e não representam contagem de participantes.</p>
+    </section>
 
     <div class="st">Evidências por Território e Atividade</div>
     <div class="evid-hero">
@@ -1176,6 +1218,47 @@ window.addEventListener('DOMContentLoaded',function(){
     setTimeout(function(){var f=document.getElementById('pf');if(f)f.focus()},100);
   }
 });
+
+/* Catálogo dos links conferidos por território, sem dados pessoais dos participantes. */
+var CC_DOCS = [{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-08","curso":"Danças Urbanas","data":"31/08/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1kSAsZ4HiMILBZMXcnX7S8mffa63kl4Do/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-08","curso":"Danças Urbanas","data":"31/08/2026","descricao":"Lista 02","url":"https://drive.google.com/file/d/1LNHR6DFqrqVtOSmnVq6nmTu1SdzFgg2S/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-08","curso":"Artes Cênicas","data":"26/08/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1UATe4PU5J7wlaG2aMtlVuqV4kvah5VRj/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Danças Urbanas","data":"14/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1Xusfiemir9sex9yrTKGqfOs6KP6Giw4J/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Danças Urbanas","data":"21/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1UCBpv53zMFFZPqKxJeAnOGVJ6EJpM1Sv/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"02/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1DaugaMXFpDprsdMCGhcwfEcBHTaCzarz/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"09/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/14D7aJkEq8mi0mKhQWl8BPLR7RoikdrEN/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"09/09/2026","descricao":"Lista 02","url":"https://drive.google.com/file/d/1qszgbbeCmBdkalEdhv1gouBBhNYEgCS3/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"16/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1z4ofALR54YQZQK2va9yTmtu_AiDCIbvs/view"},{"tipo":"lista","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"16/09/2026","descricao":"Lista 02","url":"https://drive.google.com/file/d/1OKG36OljGTVTB-hMVIy4-1KfGa323UyG/view"},{"tipo":"lista","territorio":"Cidade de Deus-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"16/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1rXwAJ10Q1kjXkrkt3fI-7K36RnOBKpw0/view"},{"tipo":"lista","territorio":"Cidade de Deus-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"16/09/2026","descricao":"Lista 02","url":"https://drive.google.com/file/d/19R9tyeE0Le4fDW_T9FCS04OmL5xUqCDm/view"},{"tipo":"lista","territorio":"Rio das Pedras-RJ","competencia":"2026-09","curso":"Técnicas de Desenho","data":"11/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1IuB_QSU6tP-4zJ2oZSTf2QSk8w79gf5j/view"},{"tipo":"lista","territorio":"Anil-RJ","competencia":"2026-09","curso":"Técnicas de Desenho","data":"18/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1ZKJfFEAw9pGWMBK8xawQCQFyYu9IZHYr/view"},{"tipo":"lista","territorio":"Anil-RJ","competencia":"2026-09","curso":"Técnicas de Desenho","data":"25/09/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1nqsr-3E9Y9k9h4STxs_EqM7f1M5jHfTy/view"},{"tipo":"lista","territorio":"Anil-RJ","competencia":"2026-10","curso":"Técnicas de Desenho","data":"02/10/2026","descricao":"Lista 01","url":"https://drive.google.com/file/d/1GORGqv9a_mf11EyzdMSbY0PFlKCLDMAM/view"},{"tipo":"fotos","territorio":"Rocinha-RJ","competencia":"2026-06","curso":"Artes Cênicas","data":"","descricao":"Pasta de fotos · 15 registros no controle/log","url":"https://drive.google.com/drive/folders/1CLNbx4wvgD-XBy2X2LFOubBu3n4QxnjQ"},{"tipo":"fotos","territorio":"Rocinha-RJ","competencia":"2026-08","curso":"Danças Urbanas","data":"","descricao":"Pasta de fotos · 16 registros no controle/log","url":"https://drive.google.com/drive/folders/1Ixg5jF0nQ_q4qMAHOxCOUgkgnwYugWsl"},{"tipo":"fotos","territorio":"Rocinha-RJ","competencia":"2026-08","curso":"Artes Cênicas","data":"","descricao":"Pasta de fotos · 11 registros no controle/log","url":"https://drive.google.com/drive/folders/10uVWN9ePyZpQvvb5ERK0olPGVJDD07B5"},{"tipo":"fotos","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Danças Urbanas","data":"","descricao":"Pasta de fotos · 9 registros no controle/log","url":"https://drive.google.com/drive/folders/18hnO_l-lD5ehvp34lqrcY2Puhz4BdxqC"},{"tipo":"fotos","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"","descricao":"Pasta de fotos · 22 registros no controle/log","url":"https://drive.google.com/drive/folders/10NzVI2nu10vhn1MeTbJNe_TEp-oJdvoV"},{"tipo":"fotos","territorio":"Rio das Pedras-RJ","competencia":"2026-09","curso":"Danças Urbanas","data":"","descricao":"Pasta de fotos · 13 registros no controle/log","url":"https://drive.google.com/drive/folders/1RTplYrM-cjPCZO7dGb71IbBgaY_wZOig"},{"tipo":"fotos","territorio":"Cidade de Deus-RJ","competencia":"2026-08","curso":"Artes Cênicas","data":"","descricao":"Pasta de fotos · 43 registros no controle/log","url":"https://drive.google.com/drive/folders/1ZWuBI2NORFTpwwJ_GeDVxo4f5TVSgc0c"},{"tipo":"fotos","territorio":"Cidade de Deus-RJ","competencia":"2026-09","curso":"Artes Cênicas","data":"","descricao":"Pasta de fotos · 4 registros no controle/log","url":"https://drive.google.com/drive/folders/19jBWw4Z0TQ74azXQXYdBv2xgyjiNd3or"},{"tipo":"fotos","territorio":"Anil-RJ","competencia":"2026-09","curso":"Artes Visuais","data":"","descricao":"Pasta de fotos · 1 registros no controle/log","url":"https://drive.google.com/drive/folders/1evOxSQaJqUBgEQaEB-26bBzpIw_wa3u8"},{"tipo":"fotos","territorio":"Manguinhos-RJ","competencia":"2026-07","curso":"Artes Cênicas","data":"","descricao":"Pasta de fotos · 11 registros no controle/log","url":"https://drive.google.com/drive/folders/1xtYDZJW0JuMDtVb9QdEPmjjmS8xfqSQT"},{"tipo":"fotos","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Técnicas de Desenho","data":"","descricao":"Pasta de fotos · 3 registros no controle/log","url":"https://drive.google.com/drive/folders/1gRV9RVspI4iVKJX3gEQ_miFwwyltOKZr"},{"tipo":"fotos","territorio":"Anil-RJ","competencia":"2026-09","curso":"Técnicas de Desenho","data":"","descricao":"Pasta de fotos · 3 registros no controle/log","url":"https://drive.google.com/drive/folders/1KIAWyEqWtRz-hur53qqJf8NFhDKXM95y"},{"tipo":"pendente","territorio":"Rocinha-RJ","competencia":"2026-06","curso":"Artes Cênicas","data":"","descricao":"15 fotos; lista não localizada na pasta conferida","url":"https://drive.google.com/drive/folders/1eAsaZJqSvGwWyx2_XW9AGQBG4B6VL7Lp"},{"tipo":"pendente","territorio":"Rocinha-RJ","competencia":"2026-09","curso":"Técnicas de Desenho","data":"","descricao":"3 fotos; lista não localizada na pasta conferida","url":"https://drive.google.com/drive/folders/1K8Acl6KH6csiaBY92PtYxSAoLnLxmWQ_"},{"tipo":"pendente","territorio":"Rio das Pedras-RJ","competencia":"2026-09","curso":"Danças Urbanas","data":"","descricao":"13 fotos; lista não localizada na pasta conferida","url":"https://drive.google.com/drive/folders/1T6fv9SHPdY1mF-fwH2BR5mZTU8Ju2-9G"},{"tipo":"pendente","territorio":"Cidade de Deus-RJ","competencia":"2026-08","curso":"Artes Cênicas","data":"","descricao":"43 fotos; lista não localizada na pasta conferida","url":"https://drive.google.com/drive/folders/1CP2tO0OyrkuYcykSYYg1Tyx55o6UB9f5"},{"tipo":"pendente","territorio":"Anil-RJ","competencia":"2026-09","curso":"Artes Visuais","data":"","descricao":"1 fotos; lista não localizada na pasta conferida","url":"https://drive.google.com/drive/folders/1ebtxmRcJceREhGZkpMqTEEyVLn45EiRM"},{"tipo":"pendente","territorio":"Manguinhos-RJ","competencia":"2026-07","curso":"Artes Cênicas","data":"","descricao":"11 fotos; lista não localizada na pasta conferida","url":"https://drive.google.com/drive/folders/1j2ivQsW7H3cvY7OWQav9lbdPN0WFch2-"}];
+var CC_TIPO_DOC='lista';
+function filtroTipoDocumentosCC(tipo){
+ CC_TIPO_DOC=tipo;
+ document.querySelectorAll('[data-doc-tipo]').forEach(function(el){el.classList.toggle('active',el.getAttribute('data-doc-tipo')===tipo)});
+ renderDocumentosCC();
+}
+function prepararDocumentosCC(){
+ var territorios=[...new Set(CC_DOCS.map(function(x){return x.territorio}))].sort();
+ var competencias=[...new Set(CC_DOCS.map(function(x){return x.competencia}))].sort();
+ var selT=document.getElementById('cc-doc-territorio');
+ var selC=document.getElementById('cc-doc-comp');
+ if(selT && selT.options.length===1) territorios.forEach(function(t){selT.add(new Option(t,t))});
+ if(selC && selC.options.length===1) competencias.forEach(function(c){selC.add(new Option(c,c))});
+}
+function renderDocumentosCC(){
+ var dest=document.getElementById('cc-docgrid');
+ if(!dest)return;
+ prepararDocumentosCC();
+ var t=document.getElementById('cc-doc-territorio').value;
+ var m=document.getElementById('cc-doc-comp').value;
+ var busca=String(document.getElementById('cc-doc-busca').value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+ var rows=CC_DOCS.filter(function(x){
+   if(CC_TIPO_DOC!=='todos' && CC_TIPO_DOC!==x.tipo)return false;
+   if(t&&x.territorio!==t)return false;
+   if(m&&x.competencia!==m)return false;
+   var hay=(x.territorio+' '+x.competencia+' '+x.curso+' '+x.data+' '+x.descricao).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+   return !busca||hay.includes(busca);
+ }).sort(function(a,b){return(a.territorio+'|'+a.competencia+'|'+a.curso+'|'+a.data).localeCompare(b.territorio+'|'+b.competencia+'|'+b.curso+'|'+b.data,'pt-BR')});
+ var labels={lista:'Abrir lista no Drive',fotos:'Abrir pasta de fotos',pendente:'Abrir pasta de listas para regularizar'};
+ dest.innerHTML=rows.map(function(x){
+   return '<article class="cc-doccard cc-'+esc(x.tipo)+'"><strong>'+esc(x.territorio)+' — '+esc(x.curso)+'</strong>'+ 
+    '<p>Competência: '+esc(x.competencia)+(x.data?' · '+esc(x.data):'')+'<br>'+esc(x.descricao)+'</p>'+ 
+    '<a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+labels[x.tipo]+'</a></article>';
+ }).join('')||'<div class="cc-nota">Nenhum documento encontrado nesse filtro.</div>';
+ document.getElementById('cc-doc-contagem').textContent='Exibindo '+rows.length+' item(ns) nesta consulta.';
+}
+window.addEventListener('DOMContentLoaded',function(){renderDocumentosCC()});
+
 </script>
 </body>
 </html>
